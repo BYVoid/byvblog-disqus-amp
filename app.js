@@ -1,11 +1,12 @@
 'use strict';
 const express = require('express');
-const app = express();
+const fs = require('fs');
 
+const app = express();
 const port = process.env.PORT || 5000;
 
 app.get('/', function (req, res) {
-  res.send('Hello World!')
+  res.sendFile(__dirname + '/disqus.html')
 });
 
 app.listen(port, function () {
